@@ -1,0 +1,26 @@
+
+	local seqname=KEYS[1];
+	local minnum=0;
+	local curtnum=0;
+	local strmin='minnum'
+	local strcurt='curtnum'
+	if redis.call('exists',seqname)>0  then
+	
+			if  redis.call('hexists',seqname,strmin)<1 then
+				return -1;
+			end
+			
+			if  redis.call('hexists',seqname,strcurt)<1 then
+				return -2
+			end
+		
+			minnum=tonumber(redis.call('hget',seqname,strmin));
+			curtnum=tonumber(redis.call('hget',seqname,strcurt));
+			
+			if curtnum<minnum then
+					redis.call('hset',seqname,strcurt,minnum);
+			end
+			return redis.call('HINCRBY',seqname,'curtnum',1);
+	else
+		return -3;				
+	end;

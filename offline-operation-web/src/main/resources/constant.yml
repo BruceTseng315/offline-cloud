@@ -1,0 +1,22 @@
+STATE:
+  LESSON:
+    UNPUB: 0 #未发布
+    PUBLISH: 1 #发布
+    STATEOFF: 2 #下架
+
+  COURSE:
+    UNPUB: 0
+    PUBLISH: 1
+    STATEOFF: 2
+ 
+#page 的默认参数值
+page:
+  defaultSize: 10
+  defaultNo: 1
+ 
+
+
+
+compress-upload: e:/upload/compressfile
+uncompress-ppt-upload: e:/upload/uncompressppt
+accessresources-url: /resources

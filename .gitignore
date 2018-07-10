@@ -1,0 +1,17 @@
+target/
+*/target*
+
+.classpath
+.factorypath
+.project
+.settings
+
+
+.pub
+sshkey*
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.class
